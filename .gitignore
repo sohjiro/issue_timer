@@ -25,5 +25,6 @@ npm-debug.log
 # secrets files as long as you replace their contents by environment
 # variables.
 /config/*.secret.exs
+/config/profile
 mix.lock
 .DS_Store
