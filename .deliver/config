@@ -1,0 +1,30 @@
+# .deliver/config
+
+APP="issue_timer"
+
+BUILD_HOST="192.168.60.7"
+BUILD_USER="vagrant"
+BUILD_AT="/home/vagrant/builds"
+
+STAGING_HOSTS="192.168.60.8"
+STAGING_USER="vagrant"
+TEST_AT="/home/vagrant/releases"
+
+pre_erlang_get_and_update_deps() {
+  local _prod_secret_path="$WORKSPACE/$APP/config/prod.secret.exs"
+
+  if [ "$TARGET_MIX_ENV" = "prod" ]; then
+    status "Copying '$_prod_secret_path' file to build host"
+    scp "$_prod_secret_path" "$BUILD_USER@$BUILD_HOST:$BUILD_AT/config/prod.secret.exs"
+
+  fi
+}
+
+pre_erlang_clean_compile() {
+  local _profile_path="$WORKSPACE/$APP/config/profile"
+
+  if [ "$TARGET_MIX_ENV" = "prod" ]; then
+    status "Copying '$_profile_path' file to build host"
+    scp "$_profile_path" "$BUILD_USER@$BUILD_HOST:$BUILD_AT/../.profile"
+  fi
+}
