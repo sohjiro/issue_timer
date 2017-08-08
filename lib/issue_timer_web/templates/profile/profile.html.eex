@@ -3,7 +3,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
-      <h4> Basic Info </h4>
+
+      <img class="media-object" src="<%= @current_user.avatar %>&s=200" alt="Avatar's user">
+      <h3> <%= @current_user.name %> </h3>
+      <h4> <%= @current_user.username %> </h4>
+      <p> <%= @current_user.location %> </p>
     </div>
     <div class="col-md-8">
     </div>
