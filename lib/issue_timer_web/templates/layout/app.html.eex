@@ -27,6 +27,7 @@
                     Welcome <strong><%= @current_user.name %></strong>
                   </div>
                   <li role="separator" class="divider"></li>
+                  <li><%= link "Profile", to: profile_path(@conn, :profile)  %></li>
                   <li><%= link "Logout", to: auth_path(@conn, :delete), method: :delete  %></li>
                 </ul>
               </li>
