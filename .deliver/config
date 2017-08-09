@@ -30,10 +30,10 @@ pre_erlang_clean_compile() {
     status "Preparing assets with: brunch build and phoenix.digest"
     __sync_remote "
       set -e
-      cd '$BUILD_AT/config'
+      cd '$BUILD_AT/assets'
 
       npm install
-      brunch build --production
+      node_modules/brunch/bin/brunch build --production
 
       cd '$BUILD_AT'
       APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $BUILD_CMD phoenix.digest $SILENCE
