@@ -21,6 +21,22 @@ pre_erlang_get_and_update_deps() {
 }
 
 pre_erlang_clean_compile() {
+  status "Preparing assets with: brunch build and phoenix.digest"
+  if [ "$TARGET_MIX_ENV" = "prod" ]; then
+    __sync_remote "
+      set -e
+      cd '$BUILD_AT/config'
+
+      npm install
+      brunch build --production
+
+      cd '$BUILD_AT'
+      APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $BUILD_CMD phoenix.digest $SILENCE
+    "
+  fi
+}
+
+pre_erlang_clean_compile() {
   local _profile_path="$WORKSPACE/$APP/config/profile"
 
   if [ "$TARGET_MIX_ENV" = "prod" ]; then
