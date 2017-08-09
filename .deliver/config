@@ -21,8 +21,13 @@ pre_erlang_get_and_update_deps() {
 }
 
 pre_erlang_clean_compile() {
-  status "Preparing assets with: brunch build and phoenix.digest"
+  local _profile_path="$WORKSPACE/$APP/config/profile"
+
   if [ "$TARGET_MIX_ENV" = "prod" ]; then
+    status "Copying '$_profile_path' file to build host"
+    scp "$_profile_path" "$BUILD_USER@$BUILD_HOST:$BUILD_AT/../.profile"
+
+    status "Preparing assets with: brunch build and phoenix.digest"
     __sync_remote "
       set -e
       cd '$BUILD_AT/config'
@@ -33,14 +38,5 @@ pre_erlang_clean_compile() {
       cd '$BUILD_AT'
       APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $BUILD_CMD phoenix.digest $SILENCE
     "
-  fi
-}
-
-pre_erlang_clean_compile() {
-  local _profile_path="$WORKSPACE/$APP/config/profile"
-
-  if [ "$TARGET_MIX_ENV" = "prod" ]; then
-    status "Copying '$_profile_path' file to build host"
-    scp "$_profile_path" "$BUILD_USER@$BUILD_HOST:$BUILD_AT/../.profile"
   fi
 }
