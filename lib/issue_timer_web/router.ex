@@ -18,6 +18,7 @@ defmodule IssueTimerWeb.Router do
 
     get "/", PageController, :index
     get "/profile", ProfileController, :profile
+    get "/repo/:id", RepoController, :show
   end
 
   scope "/auth", IssueTimerWeb do
