@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= for data <- @data do %>
+      <div class="panel <%= if data.issue.state == "closed", do: "panel-danger", else: "panel-success" %>">
+        <div class="panel-heading">
+          #<%= data.issue.number %> <%= data.issue.title %>
+          <div class="pull-right">
+            <a href="<%= data.issue.html_url %>">Show more</a>
+          </div>
+        </div>
+        <div class="panel-body">
+          <p> Created by <%= data.issue.user.username %> </p>
+          <p> Time lapse until finished <span class="badge"><%= round(data.time_lapse) %></span> mins </p>
+          <p> <%= data.issue.body %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
