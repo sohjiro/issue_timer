@@ -2,8 +2,9 @@ defmodule IssueTimer.Core.UserFromAuth do
   @moduledoc """
   Retrieve the user information from an auth request
   """
-  @type auth :: %Ueberauth.Auth{}
-  @type user :: %IssueTimer.User{}
+  @type auth     :: %Ueberauth.Auth{}
+  @type user     :: %IssueTimer.User{}
+  @type user_raw :: map()
 
   alias Ueberauth.Auth
   alias IssueTimer.{Repo, User}
@@ -30,6 +31,17 @@ defmodule IssueTimer.Core.UserFromAuth do
       location: auth.info.location,
       username: auth.info.nickname,
       token: auth.credentials.token
+    }
+  end
+
+  @doc """
+    Convert a map to an user
+  """
+  @spec from_issue(user_raw) :: user
+  def from_issue(user_raw) do
+    %User{
+      avatar: user_raw["avatar_url"],
+      username: user_raw["login"]
     }
   end
 
