@@ -10,7 +10,7 @@
         </div>
         <div class="panel-body">
           <p> Created by <%= data.issue.user.username %> </p>
-          <p> Time lapse until finished <span class="badge"><%= round(data.time_lapse) %></span> mins </p>
+          <p> It tooks <span class="badge"><%= round(data.time_lapse) %></span> mins </p>
           <p> <%= data.issue.body %> </p>
         </div>
       </div>
