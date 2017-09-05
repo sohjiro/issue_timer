@@ -52,6 +52,11 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
   extends: [],
   import: [],
   mappings: [
+    "sasl.errlog_type": [
+      commented: false,
+      datatype: :atom,
+      default: :error
+    ],
     "logger.console.format": [
       commented: false,
       datatype: :binary,
@@ -189,35 +194,40 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
     ],
     "issue_timer.Elixir.IssueTimer.Repo.username": [
       commented: false,
-      datatype: :atom,
+      datatype: {:atom, :binary},
+      default: {:system, "DATABASE_USERNAME"},
       doc: "Provide documentation for issue_timer.Elixir.IssueTimer.Repo.username here.",
       hidden: false,
       to: "issue_timer.Elixir.IssueTimer.Repo.username"
     ],
     "issue_timer.Elixir.IssueTimer.Repo.password": [
       commented: false,
-      datatype: :atom,
+      datatype: {:atom, :binary},
+      default: {:system, "DATABASE_PASSWORD"},
       doc: "Provide documentation for issue_timer.Elixir.IssueTimer.Repo.password here.",
       hidden: false,
       to: "issue_timer.Elixir.IssueTimer.Repo.password"
     ],
     "issue_timer.Elixir.IssueTimer.Repo.database": [
       commented: false,
-      datatype: :atom,
+      datatype: {:atom, :binary},
+      default: {:system, "DATABASE_NAME"},
       doc: "Provide documentation for issue_timer.Elixir.IssueTimer.Repo.database here.",
       hidden: false,
       to: "issue_timer.Elixir.IssueTimer.Repo.database"
     ],
     "issue_timer.Elixir.IssueTimer.Repo.hostname": [
       commented: false,
-      datatype: :atom,
+      datatype: {:atom, :binary},
+      default: {:system, "DATABASE_HOST"},
       doc: "Provide documentation for issue_timer.Elixir.IssueTimer.Repo.hostname here.",
       hidden: false,
       to: "issue_timer.Elixir.IssueTimer.Repo.hostname"
     ],
     "issue_timer.Elixir.IssueTimer.Repo.port": [
       commented: false,
-      datatype: :atom,
+      datatype: {:atom, :binary},
+      default: {:system, "DATABASE_PORT"},
       doc: "Provide documentation for issue_timer.Elixir.IssueTimer.Repo.port here.",
       hidden: false,
       to: "issue_timer.Elixir.IssueTimer.Repo.port"
@@ -240,14 +250,16 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
     ],
     "ueberauth.Elixir.Ueberauth.Strategy.Github.OAuth.client_id": [
       commented: false,
-      datatype: :atom,
+      datatype: {:atom, :binary},
+      default: {:system, "GITHUB_CLIENT_ID"},
       doc: "Provide documentation for ueberauth.Elixir.Ueberauth.Strategy.Github.OAuth.client_id here.",
       hidden: false,
       to: "ueberauth.Elixir.Ueberauth.Strategy.Github.OAuth.client_id"
     ],
     "ueberauth.Elixir.Ueberauth.Strategy.Github.OAuth.client_secret": [
       commented: false,
-      datatype: :atom,
+      datatype: {:atom, :binary},
+      default: {:system, "GITHUB_CLIENT_SECRET"},
       doc: "Provide documentation for ueberauth.Elixir.Ueberauth.Strategy.Github.OAuth.client_secret here.",
       hidden: false,
       to: "ueberauth.Elixir.Ueberauth.Strategy.Github.OAuth.client_secret"
