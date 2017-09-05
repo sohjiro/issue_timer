@@ -43,6 +43,7 @@ defmodule IssueTimer.Mixfile do
       {:cowboy, "~> 1.0"},
       {:ueberauth_github, "~> 0.4"},
       {:tentacat, "~> 0.5"},
+      {:conform, "~> 2.5"},
       {:edeliver, "~> 1.4.4"},
       {:distillery, "~> 1.4", runtime: false}
     ]
