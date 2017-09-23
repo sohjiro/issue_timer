@@ -53,6 +53,7 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
   import: [],
   mappings: [
     "sasl.errlog_type": [
+      hidden: true,
       commented: false,
       datatype: :atom,
       default: :error
@@ -69,6 +70,7 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
     ],
     "logger.console.metadata": [
       commented: false,
+      hidden: true,
       datatype: [
         list: :atom
       ],
@@ -76,7 +78,6 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
         :request_id
       ],
       doc: "Provide documentation for logger.console.metadata here.",
-      hidden: false,
       to: "logger.console.metadata"
     ],
     "logger.level": [
@@ -88,14 +89,15 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
       to: "logger.level"
     ],
     "phoenix.serve_endpoints": [
+      hidden: true,
       commented: false,
       datatype: :atom,
       default: true,
       doc: "Provide documentation for phoenix.serve_endpoints here.",
-      hidden: false,
       to: "phoenix.serve_endpoints"
     ],
     "issue_timer.ecto_repos": [
+      hidden: true,
       commented: false,
       datatype: [
         list: :atom
@@ -104,26 +106,26 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
         IssueTimer.Repo
       ],
       doc: "Provide documentation for issue_timer.ecto_repos here.",
-      hidden: false,
       to: "issue_timer.ecto_repos"
     ],
     "issue_timer.Elixir.IssueTimerWeb.Endpoint.secret_key_base": [
+      hidden: true,
       commented: false,
       datatype: :binary,
       default: "gISRcLUhruXP2BjcWy76eRgKTjp5ag2RTU3e43ne7YKCgVBJZG8a6i3zdD0pA4we",
       doc: "Provide documentation for issue_timer.Elixir.IssueTimerWeb.Endpoint.secret_key_base here.",
-      hidden: false,
       to: "issue_timer.Elixir.IssueTimerWeb.Endpoint.secret_key_base"
     ],
     "issue_timer.Elixir.IssueTimerWeb.Endpoint.render_errors.view": [
+      hidden: true,
       commented: false,
       datatype: :atom,
       default: IssueTimerWeb.ErrorView,
       doc: "Provide documentation for issue_timer.Elixir.IssueTimerWeb.Endpoint.render_errors.view here.",
-      hidden: false,
       to: "issue_timer.Elixir.IssueTimerWeb.Endpoint.render_errors.view"
     ],
     "issue_timer.Elixir.IssueTimerWeb.Endpoint.render_errors.accepts": [
+      hidden: true,
       commented: false,
       datatype: [
         list: :binary
@@ -133,31 +135,30 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
         "json"
       ],
       doc: "Provide documentation for issue_timer.Elixir.IssueTimerWeb.Endpoint.render_errors.accepts here.",
-      hidden: false,
       to: "issue_timer.Elixir.IssueTimerWeb.Endpoint.render_errors.accepts"
     ],
     "issue_timer.Elixir.IssueTimerWeb.Endpoint.pubsub.name": [
+      hidden: true,
       commented: false,
       datatype: :atom,
       default: IssueTimer.PubSub,
       doc: "Provide documentation for issue_timer.Elixir.IssueTimerWeb.Endpoint.pubsub.name here.",
-      hidden: false,
       to: "issue_timer.Elixir.IssueTimerWeb.Endpoint.pubsub.name"
     ],
     "issue_timer.Elixir.IssueTimerWeb.Endpoint.pubsub.adapter": [
+      hidden: true,
       commented: false,
       datatype: :atom,
       default: Phoenix.PubSub.PG2,
       doc: "Provide documentation for issue_timer.Elixir.IssueTimerWeb.Endpoint.pubsub.adapter here.",
-      hidden: false,
       to: "issue_timer.Elixir.IssueTimerWeb.Endpoint.pubsub.adapter"
     ],
     "issue_timer.Elixir.IssueTimerWeb.Endpoint.load_from_system_env": [
+      hidden: true,
       commented: false,
       datatype: :atom,
       default: true,
       doc: "Provide documentation for issue_timer.Elixir.IssueTimerWeb.Endpoint.load_from_system_env here.",
-      hidden: false,
       to: "issue_timer.Elixir.IssueTimerWeb.Endpoint.load_from_system_env"
     ],
     "issue_timer.Elixir.IssueTimerWeb.Endpoint.url.host": [
@@ -177,19 +178,19 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
       to: "issue_timer.Elixir.IssueTimerWeb.Endpoint.url.port"
     ],
     "issue_timer.Elixir.IssueTimerWeb.Endpoint.cache_static_manifest": [
+      hidden: true,
       commented: false,
       datatype: :binary,
       default: "priv/static/cache_manifest.json",
       doc: "Provide documentation for issue_timer.Elixir.IssueTimerWeb.Endpoint.cache_static_manifest here.",
-      hidden: false,
       to: "issue_timer.Elixir.IssueTimerWeb.Endpoint.cache_static_manifest"
     ],
     "issue_timer.Elixir.IssueTimer.Repo.adapter": [
+      hidden: true,
       commented: false,
       datatype: :atom,
       default: Ecto.Adapters.Postgres,
       doc: "Provide documentation for issue_timer.Elixir.IssueTimer.Repo.adapter here.",
-      hidden: false,
       to: "issue_timer.Elixir.IssueTimer.Repo.adapter"
     ],
     "issue_timer.Elixir.IssueTimer.Repo.username": [
@@ -241,11 +242,11 @@ See the moduledoc for `Conform.Schema.Validator` for more details and examples.
       to: "issue_timer.Elixir.IssueTimer.Repo.pool_size"
     ],
     "ueberauth.Elixir.Ueberauth.providers.github": [
+      hidden: true,
       commented: false,
       datatype: {:atom, :binary},
       default: {Ueberauth.Strategy.Github, []},
       doc: "Provide documentation for ueberauth.Elixir.Ueberauth.providers.github here.",
-      hidden: false,
       to: "ueberauth.Elixir.Ueberauth.providers.github"
     ],
     "ueberauth.Elixir.Ueberauth.Strategy.Github.OAuth.client_id": [
